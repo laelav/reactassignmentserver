@@ -2,9 +2,9 @@ module.exports = function (app, db) {
     const ObjectID = require('mongodb').ObjectID;
 
     //sending 2 nums to DB
-    app.post('/sendnums', (req, res) => {
-        let temp1 = Number(req.body.num1);
-        let temp2 = Number(req.body.num2);
+    app.post('/sendnums/:num1/:num2', (req, res) => {
+        let temp1 = Number(req.params.num1);
+        let temp2 = Number(req.params.num2);
         const note = {
             num1: temp1,
             num2: temp2,
