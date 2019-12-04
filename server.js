@@ -9,7 +9,7 @@ const port = 8000;
 app.use(bodyParser.json());
 
 
-MongoClient.connect(db.url,{ useNewUrlParser: true }, (err, database) => {
+MongoClient.connect(db.url,{ useUnifiedTopology: true },{ useNewUrlParser: true }, (err, database) => {
     if (err) return console.log(err);
 
 
